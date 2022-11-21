@@ -1,0 +1,27 @@
+.form-container {
+  margin: 25px 50px;
+}
+
+.signup-btn {
+  background-color: #0d6efd;
+  border-radius: 5px;
+  color: white;
+}
+
+.login-btn {
+  background-color: #02bb02;
+  display: inline-block;
+  margin: 15px 0;
+  padding: 6px 12px;
+  border-radius: 5px;
+
+  & > a {
+    color: white;
+    text-decoration: none;
+
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
