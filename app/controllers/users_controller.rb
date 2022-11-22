@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_action :set_user_params, only: %i[show update edit]
 
 
@@ -12,13 +13,13 @@ class UsersController < ApplicationController
   end
 
   def new
-    @users = User.new
+    @user = User.new
     authorize @user
   end
 
   def create
-    @users = User.new(user_params)
-    if @users.save
+    @user = User.new(user_params)
+    if @user.save
       redirect_to user_path(@user)
     else
       render :new, status: :unprocessable_entity
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   private
 
   def set_user_params
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def user_params
