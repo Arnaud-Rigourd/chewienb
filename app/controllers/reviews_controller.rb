@@ -5,27 +5,33 @@ class ReviewsController < ApplicationController
 
   def new
     @offer = Offer.find(params[:offer_id])
-    authorize @offer
     @review = Review.new
+    authorize @review
     @booking = Booking.create(user_id: current_user.id, offer_id: @offer.id)
     @booking.offer = @offer
-    # @booking = Booking.find(params[:offer_id])
-    # @review.offer = @offer
   end
 
   def create
     @offer = Offer.find(params[:offer_id])
-    authorize @offer
-    @booking = Booking.create(user_id: current_user.id, offer_id: @offer.id)
+    # @booking = Booking.create(user_id: current_user.id, offer_id: @offer.id)
+    # @booking = Booking.find(params[:id])
     @booking.offer = @offer
     @review = Review.new(review_params)
+    authorize @review
     @review.booking_id = @booking.id
-    # @review.offer = @offer
     if @review.save
       redirect_to offer_path(@offer)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @offer = @review.offer
+    authorize @review
+    @review.destroy
+    redirect_to offer_path(@offer.id)
   end
 
   private

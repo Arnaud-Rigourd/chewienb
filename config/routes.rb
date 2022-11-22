@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root "user#index"
 
   resources :offers, only: [:index, :new, :create, :show] do
-    resources :reviews, only: [:index, :new, :create]
+    resources :reviews, only: [:index, :new, :create, :destroy]
   end
+  # resource :reviews, only: [:destroy]
 end
