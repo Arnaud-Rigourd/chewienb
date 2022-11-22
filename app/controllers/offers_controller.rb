@@ -8,11 +8,6 @@ class OffersController < ApplicationController
     authorize @offer
   end
 
-  def show
-    @offer = Offer.find(params[:id])
-    authorize @offer
-  end
-
   def create
     @offer = Offer.new(offer_params)
     authorize @offer
@@ -21,6 +16,11 @@ class OffersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @offer = Offer.find(params[:id])
+    authorize @offer
   end
 
   private
