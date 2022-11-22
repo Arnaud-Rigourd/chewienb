@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "user#index"
 
-  resources :offers, only: [:index, :show]
+  resources :offers, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
 end
