@@ -3,6 +3,10 @@ class OffersController < ApplicationController
     @offers = policy_scope(Offer)
   end
 
+  def home
+    @offers = Offer.all
+  end
+
   def new
     @offer = Offer.new
     authorize @offer
@@ -27,6 +31,6 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:title, :description, :user_id)
+    params.require(:offer).permit(:title, :description, :rating, :user_id)
   end
 end

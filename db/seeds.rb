@@ -12,12 +12,23 @@ Offer.destroy_all
 
 puts "destroying..."
 
-Offer.create(title: "Bongo ", description: "Le Bongo est un modèle de sous-marin en usage dans la cité submergée d’Otoh Gunga. D’apparence presque organique, ce petit appareil peut accueillir trois passagers.")
+accroche = User.new(email: "tatatcat@gmail.com", first_name: "Raphael", last_name: "Grelon", password: "zaezae")
+accroche.save
+a = Offer.new(title: "KE-UW33", description: "Le KE-UW33 était un véhicule sous-marin utilisé sur Kamino pour voyager sous la surface des vastes océans de la planète.")
+a.user = accroche
+a.save
+b = Offer.new(title: "Submersible Devilfish", description: "Le Submersible Devilfish était un véhicule individuel pour se déplacer sous l’eau employé à l’époque de la Guerre des Clones par la Grande Armée de la République.")
+b.user = accroche
+b.save
+c = Offer.new(title: "Bongo ", description: "Le Bongo est un modèle de sous-marin en usage dans la cité submergée d’Otoh Gunga. D’apparence presque organique, ce petit appareil peut accueillir trois passagers.")
+c.user = accroche
+c.save
+d = Offer.new(title: "Le Traîneau-brochet", description: "Le Traîneau-brochet turbo sous-marin était un véhicule utilisé par le peuple Quarren à l’époque de la Guerre des Clones. Ils furent employés par la Ligue isolationniste Quarren de Nossor Ri pour prendre Mon Cala City lors de la Bataille de Mon Calamari.")
+d.user = accroche
+d.save
 
 puts "seed is done"
-# Offer.create(title: "KE-UW33", description: "Le KE-UW33 était un véhicule sous-marin utilisé sur Kamino pour voyager sous la surface des vastes océans de la planète.")
-# Offer.create(title: "Submersible Devilfish", description: "Le Submersible Devilfish était un véhicule individuel pour se déplacer sous l’eau employé à l’époque de la Guerre des Clones par la Grande Armée de la République.")
-# Offer.create(title: "Le Traîneau-brochet", description: "Le Traîneau-brochet turbo sous-marin était un véhicule utilisé par le peuple Quarren à l’époque de la Guerre des Clones. Ils furent employés par la Ligue isolationniste Quarren de Nossor Ri pour prendre Mon Cala City lors de la Bataille de Mon Calamari.")
+
 # Offer.create(title: "Vangaak", description: "Le vangaak est l'équivalent Yuuzhan Vong d'un bateau de pêche.")
 
 # Véhicules terrestres

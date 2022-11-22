@@ -1,15 +1,12 @@
-
 <%= render "shared/banner" %>
 <%= render "shared/flashes" %>
 
 <div class="container">
-  <h1>La list</h1>
 
-  <%= link_to 'Add new offer', new_offer_path %> |
-  <%= link_to 'See all starships', offers_path %>
+  <%# <h1>Une phrase d'accorche</h1> %>
 
+  <%= render "shared/direction" %>
 
-  <div class="row">
-    <%= render "shared/card" %>
-  </div>
+  <%= render "shared/carousel" %>
+
 </div>
