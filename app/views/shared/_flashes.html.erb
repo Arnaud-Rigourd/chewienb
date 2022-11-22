@@ -1,12 +1,18 @@
 <% if notice %>
   <div class="alert alert-info alert-dismissible fade show m-1" role="alert">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <%= notice %>
+      <div class="text d-flex align-items-center">
+        <img src="https://media1.giphy.com/media/8hMD9YakVza3452SpN/giphy.gif" alt="yoda">
+        <%= notice %>
+      </div>
   </div>
 <% end %>
 <% if alert %>
   <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    <%= alert %>
+    <div class="text d-flex align-items-center">
+        <img src="https://media.tenor.com/MASlt2_Rlu0AAAAC/darth-vader-light-saber.gif" alt="vador">
+        <%= alert %>
+      </div>
   </div>
 <% end %>

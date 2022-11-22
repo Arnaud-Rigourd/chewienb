@@ -1,9 +1,6 @@
-<h1>All offers</h1>
 
-<ul>
-  <% @offers.each do |offer| %>
-    <li><%= link_to offer.title, offer_path(offer) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>Un univers de vaiseau s'offre à toi</h1>
+  <%= render "shared/card" %>
+</div>
 
-<%= render 'shared/home_btn' %>

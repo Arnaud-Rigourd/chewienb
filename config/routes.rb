@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :offers, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:new, :create]
     resources :reviews, only: [:new, :create, :create, :destroy]
+
   end
   resources :bookings, except: [:new, :create]
 end

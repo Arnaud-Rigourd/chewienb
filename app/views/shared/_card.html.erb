@@ -1,82 +1,15 @@
-
-
-
 <div class="cards">
-  <div class="card">
-    <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" />
-    <div class="card-infos">
-      <div>
-        <h2 class="card-title">Vaisseau d'assaut ST-70</h2>
-        <p class="card-text">Le vaisseau d’assaut ST-70 était un modèle de canonnière, utilisée pour des patrouilles militaires bien avant l’ère impériale. Il était armé de deux canons lasers lourds Mk 3e/W et était équipé d’un hyperdrive. Des moteurs jumeaux, montés de part et d’autre de la carlingue assuraient la propulsion du vaisseau.</p>
-      </div>
-      <h2 class="card-pricing">500$</h2>
-      <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
+  <% @offers.each do |offer| %>
+    <div class="card">
+          <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" />
+          <div class="card-infos">
+            <div>
+              <h2 class="card-title"><%=offer.title%></h2>
+              <p class="card-text"><%=offer.description%></p>
+            </div>
+            <h2 class="card-pricing">500$</h2>
+            <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
+          </div>
     </div>
-  </div>
-  <div class="card">
-    <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" />
-    <div class="card-infos">
-      <div>
-        <h2 class="card-title">Vaisseau d'assaut ST-70</h2>
-        <p class="card-text">Le vaisseau d’assaut ST-70 était un modèle de canonnière, utilisée pour des patrouilles militaires bien avant l’ère impériale. Il était armé de deux canons lasers lourds Mk 3e/W et était équipé d’un hyperdrive. Des moteurs jumeaux, montés de part et d’autre de la carlingue assuraient la propulsion du vaisseau.</p>
-      </div>
-      <h2 class="card-pricing">500$</h2>
-      <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" />
-    <div class="card-infos">
-      <div>
-        <h2 class="card-title">Vaisseau d'assaut ST-70</h2>
-        <p class="card-text">Le vaisseau d’assaut ST-70 était un modèle de canonnière, utilisée pour des patrouilles militaires bien avant l’ère impériale. Il était armé de deux canons lasers lourds Mk 3e/W et était équipé d’un hyperdrive. Des moteurs jumeaux, montés de part et d’autre de la carlingue assuraient la propulsion du vaisseau.</p>
-      </div>
-      <h2 class="card-pricing">500$</h2>
-      <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" />
-    <div class="card-infos">
-      <div>
-        <h2 class="card-title">Vaisseau d'assaut ST-70</h2>
-        <p class="card-text">Le vaisseau d’assaut ST-70 était un modèle de canonnière, utilisée pour des patrouilles militaires bien avant l’ère impériale. Il était armé de deux canons lasers lourds Mk 3e/W et était équipé d’un hyperdrive. Des moteurs jumeaux, montés de part et d’autre de la carlingue assuraient la propulsion du vaisseau.</p>
-      </div>
-      <h2 class="card-pricing">500$</h2>
-      <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" />
-    <div class="card-infos">
-      <div>
-        <h2 class="card-title">Vaisseau d'assaut ST-70</h2>
-        <p class="card-text">Le vaisseau d’assaut ST-70 était un modèle de canonnière, utilisée pour des patrouilles militaires bien avant l’ère impériale. Il était armé de deux canons lasers lourds Mk 3e/W et était équipé d’un hyperdrive. Des moteurs jumeaux, montés de part et d’autre de la carlingue assuraient la propulsion du vaisseau.</p>
-      </div>
-      <h2 class="card-pricing">500$</h2>
-      <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" />
-    <div class="card-infos">
-      <div>
-        <h2 class="card-title">Vaisseau d'assaut ST-70</h2>
-        <p class="card-text">Le vaisseau d’assaut ST-70 était un modèle de canonnière, utilisée pour des patrouilles militaires bien avant l’ère impériale. Il était armé de deux canons lasers lourds Mk 3e/W et était équipé d’un hyperdrive. Des moteurs jumeaux, montés de part et d’autre de la carlingue assuraient la propulsion du vaisseau.</p>
-      </div>
-      <h2 class="card-pricing">500$</h2>
-      <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" />
-    <div class="card-infos">
-      <div>
-        <h2 class="card-title">Vaisseau d'assaut ST-70</h2>
-        <p class="card-text">Le vaisseau d’assaut ST-70 était un modèle de canonnière, utilisée pour des patrouilles militaires bien avant l’ère impériale. Il était armé de deux canons lasers lourds Mk 3e/W et était équipé d’un hyperdrive. Des moteurs jumeaux, montés de part et d’autre de la carlingue assuraient la propulsion du vaisseau.</p>
-      </div>
-      <h2 class="card-pricing">500$</h2>
-      <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
-    </div>
-  </div>
+  <% end %>
 </div>
