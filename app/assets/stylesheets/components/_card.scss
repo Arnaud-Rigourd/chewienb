@@ -1,0 +1,85 @@
+
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+    font-family: 'Coustard', serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-text {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+
+
+.card .card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+
+.card-infos .card-rating {
+  position: absolute;
+  box-shadow: 4px 1px 9px 3px rgba(0,0,0,0.15);
+  background-color: rgba(255, 255, 255, 0.736);
+  border-radius: 10px;
+  right: 16px;
+  top: -12px;
+  width: 40px;
+  font-size: 16px;
+  font-family: 'Coustard', serif;
+}
+
+.card-pricing {
+  font-family: 'Coustard', serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px;
+}
+
+.card-rating {
+  font-family: 'Coustard', serif;
+  font-weight: bold;
+  padding-left: 3px;
+  color: rgb(132, 132, 133);
+}
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
