@@ -1,3 +1,23 @@
+<h1>show the current offer here</h1>
 
-<h1><%= @offer.title %></h1>
-<p><%= @offer.description %></p>
+<%# util Arnaud %>
+
+<div>
+  <p><%= @offer.title %></p>
+  <p><%= @offer.description %></p>
+</div>
+
+<div class="reviews">
+  <% @offer.reviews.each do |r| %>
+    <p><%= r.booking.user.first_name %>:</p>
+    <p><%= r.content %></p>
+    <% if current_user == r.booking.user %>
+      <p><%= link_to 'Delete comment', offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to 'Tell us how was your trip', new_offer_review_path(@offer) %>
+</div>
+<%= render 'shared/home_btn' %>

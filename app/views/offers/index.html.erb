@@ -2,6 +2,8 @@
 
 <ul>
   <% @offers.each do |offer| %>
-    <li><%= offer.title %></li>
+    <li><%= link_to offer.title, offer_path(offer) %></li>
   <% end %>
 </ul>
+
+<%= render 'shared/home_btn' %>

@@ -1,0 +1,9 @@
+<h1>Form here</h1>
+
+<div class="form-container">
+  <p>Pseudo: <%= current_user.first_name %></p>
+  <%= simple_form_for [@offer, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.submit %>
+  <% end %>
+</div>
