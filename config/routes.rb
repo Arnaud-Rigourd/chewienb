@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root "user#index"
 
   resources :offers, only: [:index, :new, :create, :show] do
+    resources :bookings
     resources :reviews, only: [:new, :create]
   end
 end
