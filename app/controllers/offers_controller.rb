@@ -3,11 +3,6 @@ class OffersController < ApplicationController
     @offers = policy_scope(Offer)
   end
 
-  def show
-    @offer = Offer.find(params[:id])
-    authorize @offer
-  end
-
   def new
     @offer = Offer.new
     authorize @offer
@@ -23,15 +18,11 @@ class OffersController < ApplicationController
     end
   end
 
-  def destroy
-    @offer = Offer.find(params[:id])
-    @offer.destroy
-    redirect_to offers_path
   end
 
   private
 
   def offer_params
-    params.require(:offer).permit(:title, :description)
+
   end
 end
