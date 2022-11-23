@@ -2,7 +2,9 @@
   <% @offers.each do |offer| %>
     <div class="card">
           <%# <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/t70_avv6.jpg" /> %>
-          <%= cl_image_tag offer.photo.key, height: 200, width: 300 %>
+          <% if offer.photo.attached? %>
+            <%= cl_image_tag offer.photo.key, height: 200, width: 300 %>
+          <% end %>
           <div class="card-infos">
             <div>
               <h2 class="card-title"><%= link_to offer.title, offer_path(offer) %></h2>
