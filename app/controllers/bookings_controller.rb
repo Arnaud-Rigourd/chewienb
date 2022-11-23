@@ -28,11 +28,12 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-  # def destroy
-  #   @booking = Booking.find(params[:id])
-  #   @booking.destroy
-  #   redirect_to list_path(@bookmark.list), status: :see_other
-  # end
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
 
   private
 
