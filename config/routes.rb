@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
     resources :reviews, only: [:new, :create, :create, :destroy]
 
+  #routes dashboard
+    get "dashboard", to: "pages#dashboard"
   end
   resources :bookings, except: [:new, :create]
 end
