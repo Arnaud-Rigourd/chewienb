@@ -5,7 +5,7 @@
 <%# J2 Arnaud %>
 <div class="container">
   <div>
-    <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" alt="starship" />
+    <%= cl_image_tag @offer.photo.key, height: 200, width: 300 %>
     <p><%= @offer.title %></p>
     <p>Description: <%= @offer.description %></p>
     <p>Price: <%= @offer.price %>$</p>
@@ -36,5 +36,3 @@
   <%= render 'shared/home_btn' %>
 
 </div>
-
-<% console %>
