@@ -1,33 +1,31 @@
 <h1>show the current offer here</h1>
 
 <%# J2 Arnaud %>
+<div class="container">
+  <div>
+    <p><%= @offer.title %></p>
+    <p>Description: <%= @offer.description %></p>
+    <p>Price: <%= @offer.price %>$</p>
+  </div>
 
-<div>
-  <p><%= @offer.title %></p>
-  <p><%= @offer.description %></p>
-</div>
-
-<div class="reviews">
-  <% @offer.reviews.each do |r| %>
-    <p><%= r.booking.user.first_name %>:</p>
-    <p><%= r.content %></p>
-    <% if current_user == r.booking.user %>
-      <p><%= link_to 'Delete comment', offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
+  <div class="reviews">
+    <% @offer.reviews.each do |r| %>
+      <p><%= r.booking.user.first_name %>:</p>
+      <p><%= r.content %></p>
+      <% if current_user == r.booking.user %>
+        <p><%= link_to 'Delete comment', offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
+  <div>
+    <%= link_to 'Tell us how was your trip', new_offer_review_path(@offer) %>
+  </div>
+
+  <div class="form_booking">
+    <%= render "offers/form_booking" %>
+  </div>
+
+  <%= render 'shared/home_btn' %>
+
 </div>
-
-<div>
-  <%= link_to 'Tell us how was your trip', new_offer_review_path(@offer) %>
-</div>
-
-
-<div class="form_booking">
-  <%= render "form_booking" %>
-</div>
-
-
-
-<%= render 'shared/home_btn' %>
-
-<% console %>
