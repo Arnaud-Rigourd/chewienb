@@ -5,7 +5,9 @@
 <%# J2 Arnaud %>
 <div class="container">
   <div>
-    <%= cl_image_tag @offer.photo.key, height: 200, width: 300 %>
+    <% if @offer.photo.attached? %>
+      <%= cl_image_tag @offer.photo.key, height: 200, width: 300 %>
+    <% end %>
     <p><%= @offer.title %></p>
     <p>Description: <%= @offer.description %></p>
     <p>Price: <%= @offer.price %>$</p>
