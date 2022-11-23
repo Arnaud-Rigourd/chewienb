@@ -27,7 +27,6 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     authorize @offer
     @booking = Booking.new
-    # @bookings = @offer.bookings
   end
 
   private
