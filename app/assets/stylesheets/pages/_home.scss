@@ -1,8 +1,23 @@
 // Specific CSS for your home-page
 
 body {
-  background-color: black;
+  background: url("https://media.istockphoto.com/id/908596716/fr/vectoriel/ciel-%C3%A9toil%C3%A9-de-nuit-avec-les-%C3%A9toiles-et-les-plan%C3%A8tes-pouvant-servir-de-fond-vecteur.jpg?s=612x612&w=0&k=20&c=hutdLRxl2CYb_Yg05SA2pLkFGrolurOwqS6b6M1mcqY=");
   color: white;
+}
+
+.home_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.banner {
+  grid-column: 1;
+}
+
+.carousel {
+  grid-column: 2 / -1;
 }
 
 h1 {

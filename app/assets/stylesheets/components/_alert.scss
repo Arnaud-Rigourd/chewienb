@@ -12,6 +12,8 @@
 
 .alert-warning .btn-close {
   background-color: rgb(143,13,27);
+  height: 5px;
+  width: 5px;
 }
 
 
@@ -29,10 +31,13 @@
 
 .alert-info .btn-close {
   background-color: rgb(59,209,62);
+  height: 5px;
+  width: 5px;
+
 }
 
 .alert img {
-  height: 150px;
-  width: 150px;
+  height: 60px;
+  width: 60px;
   border-radius: 3px;
 }

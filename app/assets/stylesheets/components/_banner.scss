@@ -1,21 +1,50 @@
 .banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  height: 450px;
+  display: grid;
+  grid-auto-rows: minmax(100px, auto);
 }
 
 .banner h1 {
+  grid-row: 1;
+  margin: 0;
+  text-align: left;
+  text-shadow: 1px 3px 20px #697A21;
+  font-family: 'Star Jedi', 'Anton', sans-serif;
+  color: rgb(255,232,24);
+  font-size: 150px;
+  padding-bottom: 0px;
+}
+
+.banner h1 span {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+      border-top: 40px solid;
+      border-image: linear-gradient(#8ce7ff, #ffef0a) 108;;
+      content:"";
+      margin: 0 auto;
+      position: absolute;
+      top: 50%; left: 0; right: 0; bottom: 0;
+      width: 110%;
+      z-index: -1;
+  }
+}
+
+.banner h2 {
+  grid-row: 2;
   margin: 0;
   text-align: left;
   font-family: 'Coustard', serif;
-  color: white;
+  color: #8ce7ff;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 35px;
+  font-size: 26px;
   font-weight: bold;
+  // opacity: .7;
+  padding-top: 0px;
 }
 
 .banner p {
+  grid-row: 3;
   font-size: 20px;
   color: white;
   opacity: .7;
