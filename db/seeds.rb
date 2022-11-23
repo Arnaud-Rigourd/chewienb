@@ -63,10 +63,10 @@ l.save
 
 # old bookings
 
-# Booking.destroy_all
+Booking.destroy_all
 
-# booking1 = Booking.create(start_date: 2021-10-01, end_date: 2021-10-30, user_id: accroche.id, offer_id: f.id)
-# booking2 = Booking.create(start_date: 2020-10-01, end_date: 2020-10-30, user_id: accroche.id, offer_id: g.id)
+booking1 = Booking.create!(start_date: '2021-10-01', end_date: '2021-10-30', user_id: accroche.id, offer_id: f.id)
+booking2 = Booking.create(start_date: '2020-10-01', end_date: '2020-10-30', user_id: accroche.id, offer_id: g.id)
 
 
 # Véhicules à répulseurs :
