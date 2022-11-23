@@ -31,10 +31,6 @@ e = Offer.new(title: "Vangaak", description: "Le vangaak est l'équivalent Yuuzh
 e.user = accroche
 e.save
 
-puts "seed is done"
-
-
-
 # Véhicules terrestres
 
 
@@ -68,6 +64,7 @@ Booking.destroy_all
 booking1 = Booking.create!(start_date: '2021-10-01', end_date: '2021-10-30', user_id: accroche.id, offer_id: f.id)
 booking2 = Booking.create(start_date: '2020-10-01', end_date: '2020-10-30', user_id: accroche.id, offer_id: g.id)
 
+puts "seed is done"
 
 # Véhicules à répulseurs :
 
