@@ -59,6 +59,15 @@ l = Offer.new(title: "AT-DP", description: "Les AT-DP étaient des véhicules bi
 l.user = accroche
 l.save
 
+
+# old bookings
+
+# Booking.destroy_all
+
+# booking1 = Booking.create(start_date: 2021-10-01, end_date: 2021-10-30, user_id: accroche.id, offer_id: f.id)
+# booking2 = Booking.create(start_date: 2020-10-01, end_date: 2020-10-30, user_id: accroche.id, offer_id: g.id)
+
+
 # Véhicules à répulseurs :
 
 # Offer.create(title: "Airspeeder T-47", description: "L’Airspeeder T-47 est un véhicule à répulseurs léger et rapide utilisé par l’Alliance Rebelle lors de la Guerre Civile Galactique. Deux canons lasers disposés de part et d’autre du cockpit biplace constituaient son armement offensif, ainsi qu’un harpon magnétique très utile dans certaines situations.")
