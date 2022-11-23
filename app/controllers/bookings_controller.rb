@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.offer = @offer
     authorize @booking
     if @booking.save
-      redirect_to bookings_path(@booking)
+      redirect_to dashboard_path
     else
       render "offers/show", status: :unprocessable_entity
     end
