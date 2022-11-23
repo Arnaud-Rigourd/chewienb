@@ -17,6 +17,11 @@
   font-family: 'Alfa Slab One', 'Anton', sans-serif;
 }
 
+.form_title_review {
+  color: rgba(255, 255, 255, 0);
+  text-align: center;
+}
+
 .form_title {
   color: rgb(255,232,24);
   font-family: 'Coustard', serif;
@@ -34,6 +39,10 @@
   margin-left: 12px;
   margin-right: 12px;
   padding: 0px;
+
+  &:hover {
+    color: rgb(255,232,24);
+  }
 }
 
 .signup-btn {
