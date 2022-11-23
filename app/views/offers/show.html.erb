@@ -1,6 +1,6 @@
 <h1>show the current offer here</h1>
 
-<%# util Arnaud %>
+<%# J2 Arnaud %>
 
 <div>
   <p><%= @offer.title %></p>
@@ -20,5 +20,14 @@
 <div>
   <%= link_to 'Tell us how was your trip', new_offer_review_path(@offer) %>
 </div>
+
+
+<div class="form_booking">
+  <%= render "form_booking" %>
+</div>
+
+
+
 <%= render 'shared/home_btn' %>
 
+<% console %>

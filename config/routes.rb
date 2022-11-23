@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   # root "user#index"
 
   resources :offers, only: [:index, :new, :create, :show] do
-    resources :bookings, only: [:new, :create]
     resources :reviews, only: [:new, :create, :create, :destroy]
+    resources :bookings, only: [:new, :create]
 
   #routes dashboard
     get "dashboard", to: "pages#dashboard"
+
   end
   resources :bookings, except: [:new, :create]
+
 end
