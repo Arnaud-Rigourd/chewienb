@@ -9,10 +9,11 @@
 # Véhicules aquatiques
 
 Offer.destroy_all
+User.destroy_all
 
 puts "destroying..."
 
-accroche = User.new(email: "new@gmail.com", first_name: "Raphael", last_name: "Grelon", password: "zaezae")
+accroche = User.new(email: "lucas@gmail.com", first_name: "Lucas", last_name: "Aranud", password: "accroche")
 accroche.save
 a = Offer.new(title: "KE-UW33", description: "Le KE-UW33 était un véhicule sous-marin utilisé sur Kamino pour voyager sous la surface des vastes océans de la planète.")
 a.user = accroche
