@@ -1,15 +1,23 @@
-<h1>Dashboard</h1>
+<h1>Dashboard - All my bookings</h1>
 
-<div class="container">
+<%# <div class="container">
   <div>
     <div class="annonce">
     <h3>Your activity</h3>
       <div class="bookings">
       <% render "@user.bookings" %>
-      </div>
+      <%# </div>
     </div>
   </div>
-</div>
+</div> %>
 
-<% render "_footer" %>
 
+<%# J3 %>
+
+<ul>
+  <% @bookings.each do |b| %>
+    <li><%= b.offer.title %></li>
+    <li>From: <%= b.start_date %></li>
+    <li>Until: <%= b.end_date %></li>
+  <% end %>
+</ul>
