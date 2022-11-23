@@ -1,1 +1,15 @@
-<h1>Dashboeard</h1>
+<h1>Dashboard</h1>
+
+<div class="container">
+  <div>
+    <div class="annonce">
+    <h3>Your activity</h3>
+      <div class="bookings">
+      <% render "@user.bookings" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% render "_footer" %>
+
