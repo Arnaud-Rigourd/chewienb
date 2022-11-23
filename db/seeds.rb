@@ -9,10 +9,11 @@
 # Véhicules aquatiques
 
 Offer.destroy_all
+User.destroy_all
 
 puts "destroying..."
 
-accroche = User.new(email: "new@gmail.com", first_name: "Raphael", last_name: "Grelon", password: "zaezae")
+accroche = User.new(email: "lucas@gmail.com", first_name: "Lucas", last_name: "Aranud", password: "accroche")
 accroche.save
 a = Offer.new(title: "KE-UW33", description: "Le KE-UW33 était un véhicule sous-marin utilisé sur Kamino pour voyager sous la surface des vastes océans de la planète.")
 a.user = accroche
@@ -58,6 +59,15 @@ k.save
 l = Offer.new(title: "AT-DP", description: "Les AT-DP étaient des véhicules bipèdes Impériaux. Ils possédaient un unique canon laser lourd, et leur cockpit était conçu pour deux personnes : un conducteur et un tireur.")
 l.user = accroche
 l.save
+
+
+# old bookings
+
+# Booking.destroy_all
+
+# booking1 = Booking.create(start_date: 2021-10-01, end_date: 2021-10-30, user_id: accroche.id, offer_id: f.id)
+# booking2 = Booking.create(start_date: 2020-10-01, end_date: 2020-10-30, user_id: accroche.id, offer_id: g.id)
+
 
 # Véhicules à répulseurs :
 

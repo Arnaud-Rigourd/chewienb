@@ -4,31 +4,35 @@
   background: url("https://media.istockphoto.com/id/908596716/fr/vectoriel/ciel-%C3%A9toil%C3%A9-de-nuit-avec-les-%C3%A9toiles-et-les-plan%C3%A8tes-pouvant-servir-de-fond-vecteur.jpg?s=612x612&w=0&k=20&c=hutdLRxl2CYb_Yg05SA2pLkFGrolurOwqS6b6M1mcqY=")
 }
 
-.title {
-  font-family: 'Star Jedi', arial;
-  color: rgb(255,232,24);
-  font-size: 40px;
-}
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 
 .nav-link {
-  color: white;
+  color: rgb(255,232,24);
+  border-bottom: 5px solid rgb(255,232,24);
+  border-top: 5px solid rgb(255,232,24);
   font-family: 'Coustard', serif;
-  padding-top: 12px;
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding: 0px;
 }
 
+
 .nav-hey {
-  color: white;
+  color: rgb(255,232,24);
+  border-bottom: 5px solid rgb(255,232,24);
+  border-top: 5px solid rgb(255,232,24);
   font-family: 'Coustard', serif;
-  padding-top: 12px;
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .nav-link:hover{
-  color: rgb(255,232,24);
+  color: #8ce7ff;
 }
 
 .avatar {

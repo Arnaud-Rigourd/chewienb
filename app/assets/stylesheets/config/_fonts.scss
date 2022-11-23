@@ -1,10 +1,12 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fr.allfont.net/allfont.css?fonts=star-jedi');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 // Define fonts for body and headers
 
-$body-font: "Work Sans", "Star Jedi", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Star Jedi", "Helvetica", "sans-serif";
+$body-font: 'Alfa Slab One', "Star Jedi", 'Anton', "Work Sans", "Helvetica", "sans-serif";
+$headers-font: 'Alfa Slab One', "Star Jedi", 'Anton', "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
