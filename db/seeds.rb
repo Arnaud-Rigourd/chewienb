@@ -9,7 +9,7 @@
 # Véhicules aquatiques
 
 Offer.destroy_all
-User.destroy_all
+
 
 puts "destroying..."
 
