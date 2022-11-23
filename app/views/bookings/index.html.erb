@@ -1,8 +1,13 @@
 <h1>All my bookings</h1>
 
-<%# IN PROGRESS %>
+<%# J3 %>
+
 <ul>
-  <% @bookings.each do |booking| %>
-    <li><%= booking.id %></li>
+  <% @bookings.each do |b| %>
+    <li><%= b.offer.title %></li>
+    <li>From: <%= b.start_date %></li>
+    <li>Until: <%= b.end_date %></li>
   <% end %>
 </ul>
+
+<% console %>
