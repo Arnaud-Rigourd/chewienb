@@ -8,9 +8,11 @@
       <% @bookings.each do |b| %>
         <% if (b.start_date && b.end_date).present? %>
           <% if Date.today <= b.start_date %>
-            <li><%= b.offer.title %></li>
-            <li>From: <%= b.start_date %></li>
-            <li>Until: <%= b.end_date %></li>
+            <div class="resa">
+              <li><%= b.offer.title %></li>
+              <li>From: <%= b.start_date %></li>
+              <li>Until: <%= b.end_date %></li>
+            </div>
           <% end %>
         <% end %>
       <% end %>
@@ -19,13 +21,15 @@
 
   <div class="my-bookings">
   <h2>Old bookings</h2>
-    <ul>
+    <ul class="booking">
       <% @bookings.each do |b| %>
         <% if (b.start_date && b.end_date).present? %>
           <% if Date.today > b.end_date %>
-            <li><%= b.offer.title %></li>
-            <li>From: <%= b.start_date %></li>
-            <li>Until: <%= b.end_date %></li>
+            <div class="resa">
+              <li><%= b.offer.title %></li>
+              <li>From: <%= b.start_date %></li>
+              <li>Until: <%= b.end_date %></li>
+            </div>
           <% end %>
         <% end %>
       <% end %>
