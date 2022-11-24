@@ -1,18 +1,19 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-6" data-controller="date-picker" data-date-picker-price-value="<%= @offer.price %>">
       <%= simple_form_for [@offer, @booking] do |f| %>
         <%= f.input :start_date, as: :string,
                 wrapper_html: { class: "mb-4" },
                 label_html: { class: "form-label text-secondary fw-bold" },
-                input_html: { data: { controller: "flatpickr" } } %>
+                input_html: { data: { controller: "flatpickr", date_picker_target: 'startDate', action: 'input->date-picker#computePrice' } } %>
         <%= f.input :end_date, as: :string,
                 wrapper_html: { class: "mb-4" },
                 label_html: { class: "form-label text-secondary fw-bold" },
-                input_html: { data: { controller: "flatpickr" } } %>
+                input_html: { data: { controller: "flatpickr" , date_picker_target: 'endDate', action: 'input->date-picker#computePrice' }  } %>
         <%= f.submit %>
       <% end %>
+      <div data-date-picker-target="totalPrice"></div>
     </div>
   </div>
 </div>
