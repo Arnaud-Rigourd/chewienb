@@ -16,7 +16,8 @@
   </div>
 
   <div class="reviews">
-    <% @offer.reviews.each do |r| %>
+  <h2>Reviews</h2>
+      <% @offer.reviews.sort_by{ |r| r.created_at }.reverse!.each do |r| %>
       <p><%= r.booking.user.first_name %>:</p>
       <p><%= r.content %></p>
       <% if current_user == r.booking.user %>
@@ -38,4 +39,4 @@
   </div>
 </div>
 
-<% console %>
+<%# <% console %> %>
