@@ -8,6 +8,7 @@
 
 # Véhicules aquatiques
 
+Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
@@ -38,6 +39,7 @@ e.save
 # Véhicules terrestres
 
 
+
 f = Offer.new(title: "AM-TT", description: "Les AM-TT étaient des marcheurs quadripodes utilisés par le Premier Ordre, armés de deux canons laser.  Dignes héritiers du TB-TT utilisés sous l’Empire Galactique, les AM-TT étaient toutefois plus robustes, conçus principalement pour la défense et non l’assaut.", photo_url: 'https://img1.starwars-holonet.com/holonet/dictionnaire/photos/ship_n1.jpg', price: 500)
 f.user = lucas
 f.save
@@ -63,7 +65,7 @@ l.save
 
 # old bookings
 
-Booking.destroy_all
+
 
 booking1 = Booking.create!(start_date: '2021-10-01', end_date: '2021-10-30', user_id: lucas.id, offer_id: f.id)
 booking2 = Booking.create(start_date: '2020-10-01', end_date: '2020-10-30', user_id: lucas.id, offer_id: g.id)
