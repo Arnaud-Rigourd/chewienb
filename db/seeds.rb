@@ -8,7 +8,7 @@
 
 # Véhicules aquatiques
 
-Booking.destroy_all
+# Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
@@ -17,8 +17,7 @@ puts "destroying..."
 lucas = User.new(email: "lucas@gmail.com", first_name: "Lucas", last_name: "Tymen", password: "123456")
 lucas.save
 
-arnaud = User.new(email: "arnaud@gmail.com", first_name: "Arnaud", last_name: "Rigourd", password: "123456")
-arnaud.save
+
 
 a = Offer.new(title: "KE-UW33", description: "Le KE-UW33 était un véhicule sous-marin utilisé sur Kamino pour voyager sous la surface des vastes océans de la planète.", photo_url: "https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ke_uw33_avatar.png")
 a.user = lucas
@@ -67,8 +66,8 @@ l.save
 
 
 
-booking1 = Booking.create!(start_date: '2021-10-01', end_date: '2021-10-30', user_id: lucas.id, offer_id: f.id)
-booking2 = Booking.create(start_date: '2020-10-01', end_date: '2020-10-30', user_id: lucas.id, offer_id: g.id)
+# booking1 = Booking.create!(start_date: '2021-10-01', end_date: '2021-10-30', user_id: lucas.id, offer_id: f.id)
+# booking2 = Booking.create(start_date: '2020-10-01', end_date: '2020-10-30', user_id: lucas.id, offer_id: g.id)
 
 puts "seed is done"
 

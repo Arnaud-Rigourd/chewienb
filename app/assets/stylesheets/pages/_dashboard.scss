@@ -98,66 +98,74 @@
   }
 }
 
-
-
-.notification {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-  background: white;
+.avis {
   padding: 8px 16px;
   border: 1px solid rgb(235,235,235);
-  position: relative;
   width: 60%;
+  min-height: 100px;
 }
 
-.notification .notification-content {
-  flex-grow: 1;
-  padding: 0 24px;
-  color: black;
+  .img {
+    float: left;
+    width: 50px;
+  }
+
+  .avis-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .avis-text {
+    flex-grow: 1;
+    padding-left: 25px;
+    position: relative;
+
+  }
 
   .user_name {
-    padding-left: 25px;
+    margin: 0px;
+    position: absolute;
+    bottom: -5px;
+    left: 30px;
   }
+
   .user_content {
-    padding-left: 25px;
+    margin: 0px;
+    position: absolute;
+    top: -10px;
+    left: 90px;
+    width: 80%;
+    word-wrap:break-word;
+    max-height: 70px;
+    overflow: scroll;
   }
-}
 
-.notification p {
-  margin: 0;
-  line-height: 1.4;
-}
+  .fa-quote-left {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
 
-.notification small {
-  color: #999999;
-  font-weight: bold;
-}
-.notification .notification-actions {
-  opacity: 0;
-  display: flex;
-  transition: ease .3s;
-  position: absolute;
-  bottom: 30px;
-  right: 5px;
-}
+  .fa-quote-right {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+  }
 
-.notification:hover .notification-actions {
-  opacity: 1;
-}
+  .avis-supp {
+    position: relative;
+  }
 
-.notification .notification-actions a {
-  color: #999999;
-  margin-left: 16px;
-  font-size: 14px;
-}
-
-.notification .notification-actions a:hover {
-  color: #555555;
-}
-
-#mark {
-  position: absolute;
-  bottom: 5px;
-  right: 25px;
-}
+  .fa-trash {
+    color: white;
+    opacity: 0.2;
+    display: flex;
+    transition: opacity 300ms;
+    position:absolute;
+    bottom: 17px;
+    right: 10px;
+    &:hover {
+      opacity: 0.5;
+  }
+  }
