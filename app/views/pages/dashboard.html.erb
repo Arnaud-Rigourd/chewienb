@@ -8,11 +8,13 @@
       <% @bookings.each do |b| %>
         <% if (b.start_date && b.end_date).present? %>
           <% if Date.today <= b.start_date %>
+
             <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" alt="starship" />
             <li><%= b.offer.title %></li>
             <li>From: <%= b.start_date %></li>
             <li>To: <%= b.end_date %></li>
             <span><%= link_to 'Cancel my booking', booking_path(b), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your booking?" } %></span>
+
           <% end %>
         <% end %>
       <% end %>
@@ -21,14 +23,16 @@
 
   <div class="my-bookings">
   <h2>Old bookings</h2>
-    <ul>
+    <ul class="booking">
       <% @bookings.each do |b| %>
         <% if (b.start_date && b.end_date).present? %>
           <% if Date.today > b.end_date %>
+
             <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" alt="starship" />
             <li><%= b.offer.title %></li>
             <li>From: <%= b.start_date %></li>
             <li>To: <%= b.end_date %></li>
+
           <% end %>
         <% end %>
       <% end %>
