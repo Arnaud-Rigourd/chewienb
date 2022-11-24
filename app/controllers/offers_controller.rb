@@ -27,12 +27,11 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
     authorize @offer
     @booking = Booking.new
-    # @bookings = @offer.bookings
   end
 
   private
 
   def offer_params
-    params.require(:offer).permit(:title, :description, :rating, :price, :user_id)
+    params.require(:offer).permit(:title, :description, :rating, :price, :user_id, :photo)
   end
 end

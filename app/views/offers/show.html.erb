@@ -1,8 +1,13 @@
-<h1>show the current offer here</h1>
+<div class="offer-banner">
+  <h1>show the current offer here</h1>
+</div>
 
 <%# J2 Arnaud %>
 <div class="container">
   <div>
+    <% if @offer.photo.attached? %>
+      <%= cl_image_tag @offer.photo.key, height: 200, width: 300 %>
+    <% end %>
     <p><%= @offer.title %></p>
     <p>Description: <%= @offer.description %></p>
     <p>Price: <%= @offer.price %>$</p>
@@ -18,8 +23,12 @@
     <% end %>
   </div>
 
-  <div>
-    <%= link_to 'Tell us how was your trip', new_offer_review_path(@offer) %>
+  <div class="review">
+    <% @offer.bookings.each do |b| %>
+      <% if b.user_id == current_user.id %>
+        <%= link_to 'Tell us how was your trip', new_offer_review_path(@offer) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="form_booking">
