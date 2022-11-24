@@ -1,18 +1,21 @@
 <div class="cards">
   <% @offers.each do |offer| %>
     <div class="card">
-          <%# <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/t70_avv6.jpg" /> %>
-          <% if offer.photo.attached? %>
-            <%= cl_image_tag offer.photo.key, height: 200, width: 300 %>
-          <% end %>
-          <div class="card-infos">
-            <div>
-              <%= link_to offer.title, offer_path(offer), class:"card-title" %>
-              <p class="card-text"><%=offer.description%></p>
-            </div>
-            <h2 class="card-pricing">500$</h2>
-            <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
-          </div>
+      <% if offer.photo.attached? %>
+        <%= cl_image_tag offer.photo.key, height: 200, width: 300 %>
+      <% else %>
+      <%= image_tag "#{offer.photo_url}" %>
+      <% end %>
+      <div class="card-infos">
+        <div>
+          <%= link_to offer.title, offer_path(offer), class:"card-title" %>
+          <p class="card-text"><%=offer.description%></p>
+        </div>
+        <h2 class="card-pricing">500$</h2>
+        <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
+      </div>
     </div>
   <% end %>
 </div>
+
+<% console %>
