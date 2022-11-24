@@ -8,6 +8,7 @@
 
 # Véhicules aquatiques
 
+Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
@@ -63,7 +64,7 @@ l.save
 
 # old bookings
 
-Booking.destroy_all
+
 
 booking1 = Booking.create!(start_date: '2021-10-01', end_date: '2021-10-30', user_id: lucas.id, offer_id: f.id)
 booking2 = Booking.create(start_date: '2020-10-01', end_date: '2020-10-30', user_id: lucas.id, offer_id: g.id)
