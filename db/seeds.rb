@@ -34,7 +34,7 @@ e.save
 # Véhicules terrestres
 
 
-f = Offer.new(title: "AM-TT", description: "Les AM-TT étaient des marcheurs quadripodes utilisés par le Premier Ordre, armés de deux canons laser.  Dignes héritiers du TB-TT utilisés sous l’Empire Galactique, les AM-TT étaient toutefois plus robustes, conçus principalement pour la défense et non l’assaut.", photo_url: 'https://img1.starwars-holonet.com/holonet/dictionnaire/photos/ship_n1.jpg', photo_url:"https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/AMTT_avatar.png")
+f = Offer.new(title: "AM-TT", description: "Les AM-TT étaient des marcheurs quadripodes utilisés par le Premier Ordre, armés de deux canons laser.  Dignes héritiers du TB-TT utilisés sous l’Empire Galactique, les AM-TT étaient toutefois plus robustes, conçus principalement pour la défense et non l’assaut.", photo_url: 'https://img1.starwars-holonet.com/holonet/dictionnaire/photos/ship_n1.jpg', photo_url:"https://i.skyrock.net/6396/20406396/pics/1154518238_small.jpg")
 f.user = accroche
 f.save
 g = Offer.new(title: "AT-M6", description: "Les AT-M6 également surnommés Marcheurs Gorilles en raison de leur silhouette, étaient une version améliorée des anciens TB-TT Impériaux appartenant au Premier Ordre.", photo_url:"https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/atm6_avv6.jpg")

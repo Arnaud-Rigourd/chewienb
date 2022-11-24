@@ -11,6 +11,10 @@
 
 .form-control {
   opacity: 0.7;
+  border-radius: 10px;
+  &:focus {
+    border: 2px solid #ffe818;
+  }
 }
 
 .btn_search {
@@ -20,8 +24,10 @@
   background: unset;
   width: 40px;
   border: 0px;
-  // padding: 0px;
+  transition: opacity 500ms;
     &:hover {
       color: rgb(255,232,24);
+      opacity: 0.7;
+
     }
 }

@@ -1,41 +1,71 @@
-<div class="offer-banner">
-  <h1>show the current offer here</h1>
-</div>
 
-<%# J2 Arnaud %>
 <div class="container">
-  <div>
-    <% if @offer.photo.attached? %>
-      <%= cl_image_tag @offer.photo.key, height: 200, width: 300 %>
-      <% else %>
-      <%= image_tag "#{@offer.photo_url}", height: 200, width: 300 %>
-    <% end %>
-    <p><%= @offer.title %></p>
-    <p>Description: <%= @offer.description %></p>
-    <p>Price: <%= @offer.price %>$</p>
+  <div class="info_date">
+    <div class="infos">
+      <h1><%= @offer.title %></h1>
+        <div class="pictures">
+          <% if @offer.photo.attached? %>
+            <%= cl_image_tag @offer.photo.key, class:"photo"%>
+            <% else %>
+            <%= image_tag "#{@offer.photo_url}", class:"photo" %>
+          <% end %>
+          <%=image_tag("vaisseau_image2.png", height: 300, width: 400 )%>
+        </div>
+      <div class="infos-description">
+        <p class="number_person"> 4 <%=image_tag("mandalorian.svg", height: 30, width: 30 )%> | 3 <%=image_tag("droid.svg", height: 30, width: 30 )%></p>
+        <p class="prix">Prix: <%= @offer.price %><%=image_tag("alliance.svg", height: 30, width: 30 )%> / jour</p>
+        <p>Description: <%= @offer.description %></p>
+      </div>
+    </div>
+
+
+    <div class="date">
+      <%= render "offers/form_booking" %>
+    </div>
   </div>
 
+  <%# <div class="reviews"> %>
+    <%# <% @offer.reviews.each do |r| %>
+      <%# <p><%= r.booking.user.first_name %>
+      <%# <p><%= r.content %>
+      <%# <% if current_user == r.booking.user %>
+        <%# <p><%= link_to 'Delete comment', offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <%# <% end %>
+    <%# <% end %>
+  <%# </div> %>
   <div class="reviews">
-    <% @offer.reviews.each do |r| %>
-      <p><%= r.booking.user.first_name %>:</p>
-      <p><%= r.content %></p>
-      <% if current_user == r.booking.user %>
-        <p><%= link_to 'Delete comment', offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
-      <% end %>
-    <% end %>
-  </div>
+    <h1>Avis:</h1>
+      <div class="review">
+        <% @offer.bookings.each do |b| %>
+          <% if b.user_id == current_user.id%>
+            <%= link_to 'Tell us how was your trip', new_offer_review_path(@offer)%>
+          <% end %>
+        <% end %>
+      </div>
 
-  <div class="review">
-    <% @offer.bookings.each do |b| %>
-      <% if b.user_id == current_user.id %>
-        <%= link_to 'Tell us how was your trip', new_offer_review_path(@offer) %>
-      <% end %>
-    <% end %>
-  </div>
+    <div class="notification">
+      <div class="notification-content">
 
-  <div class="form_booking">
-    <%= render "offers/form_booking" %>
+        <% @offer.reviews.each do |r| %>
+      <img src='https://emi9d8rzue7.exactdn.com/wp-content/uploads/2021/12/The-Book-of-Boba-Fett-Avatar-1.png?strip=all&lossy=1&resize=600%2C600&ssl=1' class="avatar-large" />
+          <p class="user_name"><%= r.booking.user.first_name %>:</p>
+      <i class="fa-solid fa-quote-left"></i>
+          <p class="user_content"><%= r.content %></p>
+          <% if current_user == r.booking.user %>
+            <div class="notification-actions">
+              <p><%= link_to offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+                <% end %></p>
+            </div>
+            <%# <%= link_to 'Delete comment', offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+            <%# <i class="far fa-trash-alt"> %>
+          <% end %>
+        <% end %>
+      <i class="fa-solid fa-quote-right" id="mark"></i>
+      <%# <div class="notification-actions">
+        <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+        <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+      </div> %>
+      </div>
+    </div>
   </div>
-</div>
-
-<% console %>
