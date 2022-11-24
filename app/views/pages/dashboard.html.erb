@@ -12,6 +12,7 @@
             <li><%= b.offer.title %></li>
             <li>From: <%= b.start_date %></li>
             <li>To: <%= b.end_date %></li>
+            <span><%= link_to 'Cancel my booking', booking_path(b), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your booking?" } %></span>
           <% end %>
         <% end %>
       <% end %>

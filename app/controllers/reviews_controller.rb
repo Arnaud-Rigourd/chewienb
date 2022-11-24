@@ -7,17 +7,13 @@ class ReviewsController < ApplicationController
     @offer = Offer.find(params[:offer_id])
     @review = Review.new
     authorize @review
-    @booking = Booking.create(user_id: current_user.id, offer_id: @offer.id)
-    @booking.offer = @offer
   end
 
   def create
     @offer = Offer.find(params[:offer_id])
-    # @booking = Booking.create(user_id: current_user.id, offer_id: @offer.id)
-    # @booking = Booking.find(params[:id])
-    @booking.offer = @offer
     @review = Review.new(review_params)
     authorize @review
+    @booking = @offer.bookings.last
     @review.booking_id = @booking.id
     if @review.save
       redirect_to offer_path(@offer)
@@ -27,7 +23,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
+    @review = Review.find(params[:offer_id])
     @offer = @review.offer
     authorize @review
     @review.destroy
@@ -37,6 +33,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :booking_id)
+    params.require(:review).permit(:content, :booking_id, :name)
   end
 end
