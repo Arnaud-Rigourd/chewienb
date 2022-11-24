@@ -1,9 +1,17 @@
-<h1>Form here</h1>
 
-<div class="form-container">
-  <p>Pseudo: <%= current_user.first_name %></p>
-  <%= simple_form_for [@offer, @review] do |f| %>
-    <%= f.input :content %>
-    <%= f.submit %>
-  <% end %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="grid_form col-12 col-lg-6 p-5">
+      <div class="form-container">
+        <h1 class="titre_form">Form here</h1>
+          <div class="form_title_review">
+            <p>Donne nous ton avis <%= current_user.first_name %></p>
+            <%= simple_form_for [@offer, @review] do |f| %>
+              <%= f.input :content, input_html: { class: "case_form" } %>
+              <%= f.submit class: 'btn btn_form_offer' %>
+          </div>
+            <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -7,7 +7,7 @@
           <% end %>
           <div class="card-infos">
             <div>
-              <h2 class="card-title"><%= link_to offer.title, offer_path(offer) %></h2>
+              <%= link_to offer.title, offer_path(offer), class:"card-title" %>
               <p class="card-text"><%=offer.description%></p>
             </div>
             <h2 class="card-pricing">500$</h2>
