@@ -17,25 +17,31 @@ puts "destroying..."
 lucas = User.new(email: "lucas@gmail.com", first_name: "Lucas", last_name: "Tymen", password: "123456")
 lucas.save
 
+# Chasseurs :
+
+m = Offer.create(title: "X-Wing T-65", description: "Fer de lance de l'Alliance Rebelle, le X-Wing T-65 ou T-65B était facilement reconnaissable par la présence de quatre ailes à double position pour un gain de vitesse.", photo_url: 'https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/xwingt65_avv6.jpg', price: 500)
+m.user = lucas
+m.save
+n = Offer.create(title: "X-Wing T-70", description: "Comme son ancêtre T-65, le T-70 possédait des ailes cruciformes disposant d’un canon laser à chaque extrémité, et un long nez abritant les senseurs ainsi qu’un lance-projectiles pouvant être équipé de torpilles à protons, de missiles à concussion ou d’autres armes secondaires.", photo_url: 'https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/t70_avv6.jpg', price: 500)
+n.user = lucas
+n.save
+
+o = Offer.create(title: "Naboo N-1", description: "Le Naboo N-1 est le chasseur de l'armée de Naboo.", photo_url: 'https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/naboo_n1_avv6.jpg', price: 500)
+o.user = lucas
+o.save
+
+q = Offer.create(title: "Destroyer Stellaire Venator", description: "Le croiseur stellaire de classe Venator fut le fer de lance de la Grande Armée de la République durant la Guerre des Clones.", photo_url: 'https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/destroyer_venator_avv6.jpg', price: 500)
+q.user = lucas
+q.save
+
+r = Offer.create(title: "Destroyer Stellaire Impérial Mk.II", description: "Le Destroyer Stellaire de classe Impériale-II est un vaisseau de supériorité spatiale adapté du célèbre Destroyer Stellaire Impérial Mk.I, créé par Lira Wessex dans les dernières heures de la Guerre des Clones.", photo_url: 'https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/destroyer_imperial2_avv6.jpg', price: 500)
+r.user = lucas
+r.save
 
 
-a = Offer.new(title: "KE-UW33", description: "Le KE-UW33 était un véhicule sous-marin utilisé sur Kamino pour voyager sous la surface des vastes océans de la planète.", photo_url: "https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ke_uw33_avatar.png")
-a.user = lucas
-a.save
-b = Offer.new(title: "Submersible Devilfish", description: "Le Submersible Devilfish était un véhicule individuel pour se déplacer sous l’eau employé à l’époque de la Guerre des Clones par la Grande Armée de la République.", photo_url: "https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/devilfish_avatar.png")
-b.user = lucas
-b.save
-c = Offer.new(title: "Bongo", description: "Le Bongo est un modèle de sous-marin en usage dans la cité submergée d’Otoh Gunga. D’apparence presque organique, ce petit appareil peut accueillir trois passagers.", photo_url:"https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/bongo.jpeg")
-c.user = lucas
-c.save
-d = Offer.new(title: "Le Traîneau-brochet", description: "Le Traîneau-brochet turbo sous-marin était un véhicule utilisé par le peuple Quarren à l’époque de la Guerre des Clones. Ils furent employés par la Ligue isolationniste Quarren de Nossor Ri pour prendre Mon Cala City lors de la Bataille de Mon Calamari.", photo_url:"https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/traineau_brochet_avatar.png")
-d.user = lucas
-d.save
-e = Offer.new(title: "Vangaak", description: "Le vangaak est l'équivalent Yuuzhan Vong d'un bateau de pêche.", photo_url:"https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/vangaak_avv6.jpg")
-e.user = lucas
-e.save
-
-# Véhicules terrestres
+s = Offer.create(title: "Dauntless", description: "Le Dauntless était un Destroyer stellaire de classe impériale II  faisant partie de la marine impériale. Il était aussi le vaisseau principal du Moff Raythe.", photo_url: 'https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/Dauntless_avatar.png', price: 500)
+s.user = lucas
+s.save
 
 
 
@@ -62,6 +68,31 @@ l.user = lucas
 l.save
 
 
+a = Offer.new(title: "KE-UW33", description: "Le KE-UW33 était un véhicule sous-marin utilisé sur Kamino pour voyager sous la surface des vastes océans de la planète.", photo_url: "https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ke_uw33_avatar.png", price: 500)
+a.user = lucas
+a.save
+b = Offer.new(title: "Submersible Devilfish", description: "Le Submersible Devilfish était un véhicule individuel pour se déplacer sous l’eau employé à l’époque de la Guerre des Clones par la Grande Armée de la République.", photo_url: "https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/devilfish_avatar.png", price: 500)
+b.user = lucas
+b.save
+c = Offer.new(title: "Bongo", description: "Le Bongo est un modèle de sous-marin en usage dans la cité submergée d’Otoh Gunga. D’apparence presque organique, ce petit appareil peut accueillir trois passagers.", photo_url:"https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/bongo.jpeg", price: 500)
+c.user = lucas
+c.save
+d = Offer.new(title: "Le Traîneau-brochet", description: "Le Traîneau-brochet turbo sous-marin était un véhicule utilisé par le peuple Quarren à l’époque de la Guerre des Clones. Ils furent employés par la Ligue isolationniste Quarren de Nossor Ri pour prendre Mon Cala City lors de la Bataille de Mon Calamari.", photo_url:"https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/traineau_brochet_avatar.png", price: 500)
+d.user = lucas
+d.save
+e = Offer.new(title: "Vangaak", description: "Le vangaak est l'équivalent Yuuzhan Vong d'un bateau de pêche.", photo_url:"https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/vangaak_avv6.jpg", price: 500)
+e.user = lucas
+e.save
+
+# Véhicules terrestres
+
+
+# Offer.create(title: "Black One", description: "Black One était à l’origine un chasseur T-70 standard, sans doute récupéré dans les surplus de la Nouvelle République quand la générale Organa forma la Résistance.")
+# Offer.create(title: "Bombardier Royal NB-1S", description: "Le Bombardier Royal NB-1S, ou tout simplement bombardier Naboo, est un prototype de véhicule rarement utilisé par les Forces de Sécurité Royale Naboo")
+# Offer.create(title: "RZ-1 A-Wing", description: "A l'époque du 'plus terrible des conflits', l'Alliance Rebelle, prévoyant une bataille importante, voire finale, décida de la conception de nouveaux appareils pour renforcer et surtout rajeunir sa flotte grandissante mais vieillissante. Le RZ-1 A-Wing est un de ces projets mais ce n'est pas le seul.")
+
+
+
 # old bookings
 
 
@@ -82,14 +113,7 @@ puts "seed is done"
 # Offer.create(title: "Canonnière TIO/BA", description: "Le Transport d’Infanterie Offensif de Basse Altitude est un véhicule atmosphérique utilisé par la Grande Armée de la République lors de la Guerre des Clones. Apparenté à la canonnière TBO/BA, ce véhicule de transport déploie des troupes et du matériel léger.")
 # Offer.create(title: "RGC-16", description: "Parmi les nombreux modèles d’airspeeders existant dans la galaxie, le RGC-16 était certainement l’un des plus répandus au moment de la guerre des clones.")
 
-# Chasseurs :
 
-# Offer.create(title: "X-Wing T-65", description: "Fer de lance de l'Alliance Rebelle, le X-Wing T-65 ou T-65B était facilement reconnaissable par la présence de quatre ailes à double position pour un gain de vitesse.")
-# Offer.create(title: "X-Wing T-70", description: "Comme son ancêtre T-65, le T-70 possédait des ailes cruciformes disposant d’un canon laser à chaque extrémité, et un long nez abritant les senseurs ainsi qu’un lance-projectiles pouvant être équipé de torpilles à protons, de missiles à concussion ou d’autres armes secondaires.")
-# Offer.create(title: "Naboo N-1", description: "Le Naboo N-1 est le chasseur de l'armée de Naboo.")
-# Offer.create(title: "Black One", description: "Black One était à l’origine un chasseur T-70 standard, sans doute récupéré dans les surplus de la Nouvelle République quand la générale Organa forma la Résistance.")
-# Offer.create(title: "Bombardier Royal NB-1S", description: "Le Bombardier Royal NB-1S, ou tout simplement bombardier Naboo, est un prototype de véhicule rarement utilisé par les Forces de Sécurité Royale Naboo")
-# Offer.create(title: "RZ-1 A-Wing", description: "A l'époque du 'plus terrible des conflits', l'Alliance Rebelle, prévoyant une bataille importante, voire finale, décida de la conception de nouveaux appareils pour renforcer et surtout rajeunir sa flotte grandissante mais vieillissante. Le RZ-1 A-Wing est un de ces projets mais ce n'est pas le seul.")
 
 # Vaisseaux légers :
 
@@ -115,9 +139,7 @@ puts "seed is done"
 # Offer.create(title: "Lawbringer", description: "Le Lawbringer était un Destroyer Stellaire Impérial de classe I. Il appartenait à l'Agent Kallus, du Bureau de Sécurité Impérial.
 # Cinq ans avant la Bataille de Yavin, il était stationné en orbite autour de Lothal afin de veiller à la sécurité des habitants.")
 # Offer.create(title: "Executrix", description: "Durant la période impériale, l’Executrix était le destroyeur personnel de Tarkin jusqu’à que ce dernier prenne le commandement de l’Étoile de la Mort. D’un point de vue technique, rien ne le différenciait des autres destroyers de classe Impérial I.")
-# Offer.create(title: "Destroyer Stellaire Venator", description: "Le croiseur stellaire de classe Venator fut le fer de lance de la Grande Armée de la République durant la Guerre des Clones.")
-# Offer.create(title: "Destroyer Stellaire Impérial Mk.II", description: "Le Destroyer Stellaire de classe Impériale-II est un vaisseau de supériorité spatiale adapté du célèbre Destroyer Stellaire Impérial Mk.I, créé par Lira Wessex dans les dernières heures de la Guerre des Clones.")
-# Offer.create(title: "Dauntless", description: "Le Dauntless était un Destroyer stellaire de classe impériale II  faisant partie de la marine impériale. Il était aussi le vaisseau principal du Moff Raythe.")
+
 # Offer.create(title: "Croiseur Mediator", description: "Le croiseur Mediator est le descendant des célèbres croiseurs MC80 et MC90 des Chantiers Navals de Mon Calamari. Tout comme eux, il transporte un vaste arsenal offensif composé de tourelles turbolasers et de batteries ioniques, et dispose d'un blindage conséquent.")
 # Offer.create(title: "Avenger", description: "L’Avenger, sous le commandement du capitaine Lorth Needa était l'un des croiseur composant l’Escadron de la Mort et servit pendant la bataille de Hoth, au cours de laquelle il s’illustra en poursuivant le Millenium Falcon au cœur du champ d’astéroïdes, poursuite qui s’acheva par la fuite de Solo et l’exécution du capitaine Needa par Vador en personne.")
 # Offer.create(title: "Dévastateur", description: "Le Dévastateur fut l'un des plus prestigieux destroyers de l'Empire. Il fut souvent amélioré, afin de lui permettre de rester compétitif en matière d'armement et de système. Le Dévastateur fut d'abord le vaisseau-amiral de Dark Vador, et connut son heure de gloire peu de temps avant la bataille de Yavin")
