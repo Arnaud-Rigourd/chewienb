@@ -25,6 +25,9 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     authorize @booking
+    @booking.status = "validated"
+    @booking.save
+    redirect_to dashboard_path, status: :see_other
   end
 
   def destroy
