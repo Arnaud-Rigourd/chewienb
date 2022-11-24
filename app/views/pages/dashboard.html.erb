@@ -3,16 +3,18 @@
 <%# J3 %>
 <div class="dashboard-container container">
   <div class="my-bookings">
-  <h2>Current bookings</h2>
+    <h2>Current bookings</h2>
     <ul>
-      <% @bookings.each do |b| %>
+      <% @bookings_current_user.each do |b| %>
         <% if (b.start_date && b.end_date).present? %>
           <% if Date.today <= b.start_date %>
             <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" alt="starship" />
             <li><%= b.offer.title %></li>
             <li>From: <%= b.start_date %></li>
             <li>To: <%= b.end_date %></li>
-            <span><%= link_to 'Cancel my booking', booking_path(b), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your booking?" } %></span>
+            <% if b.status == "pending" %>
+              <span><%= link_to 'Cancel my booking', booking_path(b), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel your booking?" } %></span>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
@@ -20,9 +22,58 @@
   </div>
 
   <div class="my-bookings">
-  <h2>Old bookings</h2>
+    <h2>Reservations à valider</h2>
     <ul>
-      <% @bookings.each do |b| %>
+      <% @bookings_current_user.each do |b| %>
+        <% if b.status == "pending" %>
+          <% if b.offer.photo.attached? %>
+            <li><%= cl_image_tag b.offer.photo.key, height: 200, width: 300 %></li>
+          <% else %>
+            <li><%= image_tag "#{b.offer.photo_url}" %></li>
+          <% end %>
+          <li><%= b.offer.title %></li>
+          <li><%= b.offer.price %></li>
+        <li>Dates demandés : du <%= b.start_date %> au <%= b.end_date %></li>
+        <% end %>
+      <% end %>
+    </ul>
+    <h2>Reservations validées</h2>
+    <ul>
+      <% @bookings_current_user.each do |b| %>
+        <% if b.status == "validated" %>
+          <% if b.offer.photo.attached? %>
+            <li><%= cl_image_tag b.offer.photo.key, height: 200, width: 300 %></li>
+          <% else %>
+            <li><%= image_tag "#{b.offer.photo_url}" %></li>
+          <% end %>
+          <li><%= b.offer.title %></li>
+          <li><%= b.offer.price %></li>
+        <li>Dates demandés : du <%= b.start_date %> au <%= b.end_date %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="my-offers">
+    <h2>Mes offres publiées</h2>
+    <ul>
+      <% @offers_current_user.each do |o| %>
+           <% if o.photo.attached? %>
+              <li><%= cl_image_tag o.photo.key, height: 200, width: 300 %></li>
+            <% else %>
+              <li><%= image_tag "#{o.photo_url}" %></li>
+            <% end %>
+          <li><%= o.title %></li>
+          <li><%= o.description %></li>
+          <%# <li><%= o.status %></li> %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="my-bookings">
+    <h4>Old bookings</h4>
+    <ul>
+      <% @bookings_current_user.each do |b| %>
         <% if (b.start_date && b.end_date).present? %>
           <% if Date.today > b.end_date %>
             <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" alt="starship" />
@@ -37,3 +88,5 @@
 
   <p><%= link_to "Back to starships", offers_path %></p>
 </div>
+
+<% console %>
