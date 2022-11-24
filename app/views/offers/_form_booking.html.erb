@@ -3,8 +3,14 @@
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
       <%= simple_form_for [@offer, @booking] do |f| %>
-        <%= f.input :start_date, as: :date %>
-        <%= f.input :end_date, as: :date %>
+        <%= f.input :start_date, as: :string,
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
+        <%= f.input :end_date, as: :string,
+                wrapper_html: { class: "mb-4" },
+                label_html: { class: "form-label text-secondary fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
         <%= f.submit %>
       <% end %>
     </div>
