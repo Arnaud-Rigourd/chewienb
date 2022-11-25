@@ -1,16 +1,18 @@
-<div class="grid_form_date mt-5" data-controller="date-picker" data-date-picker-price-value="<%= @offer.price %>">>
-  <%= simple_form_for [@offer, @booking] do |f| %>
-    <%= f.input :start_date, as: :string,
-            wrapper_html: { class: "form_title mb-4" },
-            label_html: { class: "case_form form-label fw-bold" },
-            input_html: { data: { controller: "flatpickr", date_picker_target:"startDate", action: "change->date-picker#computePrice" } } %>
-    <%= f.input :end_date, as: :string,
-            wrapper_html: { class: "form_title mb-4" },
-            label_html: { class: "case_form form-label fw-bold" },
-            input_html: { data: { controller: "flatpickr", date_picker_target:"endDate" }, action: "change->date-picker#computePrice" } %>
-    <%= f.submit class: 'btn btn_form_date'%>
-  <% end %>
-  <%# <div data-date-picker-target="totalDays"><div><p>days</p></div></div> %>
-  <p>Total</p>
-  <span data-date-picker-target="totalPrice"></span>
+
+<div class="grid_form_date mt-5">
+      <%= simple_form_for [@offer, @booking] do |f| %>
+        <%= f.input :start_date, as: :string,
+                wrapper_html: { class: "form_title mb-4" },
+                label_html: { class: "case_form form-label fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
+        <%= f.input :end_date, as: :string,
+                wrapper_html: { class: "form_title mb-4" },
+                label_html: { class: "case_form form-label fw-bold" },
+                input_html: { data: { controller: "flatpickr" } } %>
+        <%= f.submit class: 'btn btn_form_date'%>
+      <% end %>
+      <div data-date_picker_target="totalDays"><div><p>Jours</p></div></div>
+      <div data-date-picker-target="totalPrice"><div><p>montant total (€)</p></div></div>
+    </div>
+  </div>
 </div>
