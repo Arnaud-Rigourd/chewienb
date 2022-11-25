@@ -23,16 +23,6 @@
     </div>
   </div>
 
-  <%# <div class="reviews"> %>
-    <%# <% @offer.reviews.each do |r| %>
-      <%# <p><%= r.booking.user.first_name %>
-      <%# <p><%= r.content %>
-      <%# <% if current_user == r.booking.user %>
-        <%# <p><%= link_to 'Delete comment', offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-      <%# <% end %>
-    <%# <% end %>
-  <%# </div> %>
-
   <div class="reviews">
 
     <h1>Avis:</h1>
@@ -49,14 +39,12 @@
       <div class="avis-content">
           <img src='https://emi9d8rzue7.exactdn.com/wp-content/uploads/2021/12/The-Book-of-Boba-Fett-Avatar-1.png?strip=all&lossy=1&resize=600%2C600&ssl=1' class="avatar-large" />
             <div class="avis-text">
-              <i class="fa-solid fa-quote-left"></i>
               <p class="user_name"><%= r.booking.user.first_name %>:</p>
-              <p class="user_content"><%= r.content %></p>
-              <i class="fa-solid fa-quote-right"></i>
+              <p class="user_content"><i class="fa-solid fa-quote-left"></i><span class="text-review"><%= r.content %></span></p>
             </div>
           <% if current_user == r.booking.user%>
             <div class="avis-supp">
-       
+
               <p><%= link_to offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
               <i class="fa-solid fa-trash d-flex"></i>
               <% end %></p>
@@ -68,4 +56,3 @@
   </div>
 
 </div>
-
