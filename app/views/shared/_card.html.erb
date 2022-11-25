@@ -1,19 +1,46 @@
+
+
+<% number = ["1", "2", "3", "4", "5", "6", "7", "8", "9"] %>
+<% price = ["530", "220", "345", "454", "580", "623", "709", "820", "910"] %>
+
+
 <div class="cards">
   <% @offers.each do |offer| %>
     <div class="card">
-      <% if offer.photo.attached? %>
-        <%= cl_image_tag offer.photo.key, height: 200, width: 300 %>
-      <% else %>
-        <%= image_tag "#{offer.photo_url}" %>
-      <% end %>
-      <div class="card-infos">
-        <div>
-          <%= link_to offer.title, offer_path(offer), class:"card-title" %>
-          <p class="card-text"><%=offer.description%></p>
+        <div class="div_photo">
+           <% if offer.photo.attached? %>
+              <%= cl_image_tag offer.photo.key, class: "picture_card" %>
+          <% else %>
+            <%= image_tag "#{offer.photo_url}", class: "picture_card" %>
+          <% end %>
         </div>
-        <h2 class="card-pricing"><%= offer.price %>$</h2>
-        <p class="card-rating"> 5 <i class="fa-solid fa-star"></i></p>
-      </div>
+
+          <div class="titre_card">
+            <%= link_to offer.title, offer_path(offer), class: "titre_card_titre"%>
+            <hr>
+          </div>
+
+          <div class="tab">
+            <span class="tab-icone"><%= offer.price %></span>
+            <p class="icone"><%= image_tag("jediblack.svg") %></p>
+          </div>
+          <div class="tab">
+            <span class="tab-icone"><%= number.sample.to_i %></span>
+            <p class="icone"><i class="fa-solid fa-star"></i></p>
+          </div>
+          <div class="tab">
+            <span class="tab-icone">5</span>
+            <p class="icone"><%= image_tag("princess.svg") %></p>
+          </div>
+
+        <div class="info">
+          <%= offer.description.first(150)%> ...
+        </div>
+
+        <div class="btn_vaisseau">
+          <%= image_tag("xwing.svg", size: '30x30')%>
+        </div>
+
     </div>
   <% end %>
 </div>
