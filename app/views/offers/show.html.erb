@@ -44,8 +44,7 @@
             </div>
           <% if current_user == r.booking.user%>
             <div class="avis-supp">
-
-              <p><%= link_to offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+              <p><%= link_to offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Certain vous êtes?" } do %>
               <i class="fa-solid fa-trash d-flex"></i>
               <% end %></p>
             </div>
