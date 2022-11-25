@@ -26,7 +26,7 @@
   </div>
 
   <div class="my-bookings">
-    <h2>Reservations à valider</h2>
+    <h2>Mes publications à valider</h2>
     <ul>
       <% @bookinks_waiting_for_validation_sorted.each do |b| %>
         <% if b.status == "pending" %>
@@ -46,7 +46,7 @@
   </div>
 
   <div class="my-bookings">
-    <h2>Reservations validées</h2>
+    <h2>Publications reservées</h2>
     <ul>
       <% @bookinks_waiting_for_validation_sorted.each do |b| %>
         <% if b.status == "validated" %>
