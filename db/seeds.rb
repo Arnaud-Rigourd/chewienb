@@ -1,5 +1,3 @@
-
-
 Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
@@ -69,6 +67,7 @@ l.user = lucas
 l.save
 
 
+
 a = Offer.new(title: "KE-UW33", description: "Le KE-UW33 était un véhicule sous-marin utilisé sur Kamino pour voyager sous la surface des vastes océans de la planète.", photo_url: "https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ke_uw33_avatar.png", price: 500)
 a.user = lucas
 a.save
@@ -88,7 +87,6 @@ d.save
 e = Offer.new(title: "Vangaak", description: "Le vangaak est l'équivalent Yuuzhan Vong d'un bateau de pêche.", photo_url:"https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/vangaak_avv6.jpg", price: 500)
 e.user = lucas
 e.save
-
 
 
 booking1 = Booking.create!(start_date: '2021-10-01', end_date: '2021-10-30', user_id: lucas.id, offer_id: f.id)
