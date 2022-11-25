@@ -1,12 +1,12 @@
-<h1>All my bookings</h1>
+<h1>Toutes mes Réservations</h1>
 
 <%# J3 %>
 
 <ul>
   <% @bookings.each do |b| %>
     <li><%= b.offer.title %></li>
-    <li>From: <%= b.start_date %></li>
-    <li>Until: <%= b.end_date %></li>
+    <li>à partir de: <%= b.start_date %></li>
+    <li>jusqu'à: <%= b.end_date %></li>
   <% end %>
 </ul>
 

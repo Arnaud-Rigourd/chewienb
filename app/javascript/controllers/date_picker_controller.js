@@ -17,11 +17,23 @@ export default class extends Controller {
     console.log(this.priceValue);
     console.log(this.startDateTarget.value);
     console.log(this.endDateTarget.value);
-
     const start = new Date(this.startDateTarget.value);
     const end = new Date(this.endDateTarget.value);
     const sub = end.getTime()-start.getTime();
+    console.log(this.sub)
     console.log(sub /(1000 * 3600 * 24) * this.priceValue);
     this.totalPriceTarget.innerText = sub /(1000 * 3600 * 24) * this.priceValue
   }
+
+  computeDays() {
+    console.log(this.priceValue);
+    console.log(this.startDateTarget.value);
+    console.log(this.endDateTarget.value);
+    const start = new Date(this.startDateTarget.value);
+    const end = new Date(this.endDateTarget.value);
+    const sub = end.getTime()-start.getTime();
+    console.log(this.sub)
+    this.totalDaysTarget.innerText = sub (this.totalDays /(1000 * 3600 * 24));
+  }
+
 }

@@ -92,6 +92,7 @@
   </div>
 
   <div class="my-bookings">
+
     <h2>Anciennes réservations</h2>
       <% @bookings_current_user.each do |b| %>
         <ul>
@@ -105,6 +106,7 @@
                 <li>To: <%= b.end_date %></li>
               </div>
             <% end %>
+
           <% end %>
         </ul>
       <% end %>
