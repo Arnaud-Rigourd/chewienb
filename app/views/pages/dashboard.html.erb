@@ -79,7 +79,7 @@
   </div>
 
   <div class="my-bookings">
-    <h4>Old bookings</h4>
+    <h4>anciennes réservations</h4>
     <ul>
       <% @bookings_current_user.each do |b| %>
         <% if (b.start_date && b.end_date).present? %>
@@ -87,8 +87,8 @@
             <li><%= link_to (image_tag "#{b.offer.photo_url}"), offer_path(b.offer) %></li>
             <%# <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" alt="starship" /> %>
             <li><%= link_to b.offer.title, offer_path(b.offer) %></li>
-            <li>From: <%= b.start_date %></li>
-            <li>To: <%= b.end_date %></li>
+            <li>depuis le: <%= b.start_date %></li>
+            <li>jusqu'au: <%= b.end_date %></li>
 
           <% end %>
         <% end %>
