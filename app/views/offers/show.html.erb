@@ -45,6 +45,7 @@
       </div>
 
 
+
   <div class="avis">
     <% @offer.reviews.sort_by{ |r| r.created_at }.reverse!.each do |r| %>
       <div class="avis-content">
@@ -57,6 +58,7 @@
             </div>
           <% if current_user == r.booking.user%>
             <div class="avis-supp">
+
               <p><%= link_to offer_review_path(r), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
               <i class="fa-solid fa-trash d-flex"></i>
               <% end %></p>
@@ -65,6 +67,6 @@
         </div>
         <% end %>
     </div>
-
   </div>
 </div>
+

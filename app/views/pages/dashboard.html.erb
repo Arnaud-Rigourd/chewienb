@@ -1,6 +1,5 @@
-<h1>Dashboard - All my bookings</h1>
+<h1>Dashboard</h1>
 
-<%# J3 %>
 <div class="dashboard-container container">
   <div class="my-bookings">
     <h2>Reservations en cours</h2>
@@ -9,11 +8,11 @@
         <% if (b.start_date && b.end_date).present? %>
           <% if Date.today <= b.start_date %>
             <% if b.offer.photo.attached? %>
-            <li><%= cl_image_tag b.offer.photo.key, height: 200, width: 300 %></li>
+            <li><%= link_to (cl_image_tag b.offer.photo.key, height: 200, width: 300), offer_path(b.offer) %></li>
           <% else %>
-            <li><%= image_tag "#{b.offer.photo_url}" %></li>
+            <li><%= link_to (image_tag "#{b.offer.photo_url}"), offer_path(b.offer) %></li>
           <% end %>
-            <li><%= b.offer.title %></li>
+            <li><%= link_to b.offer.title, offer_path(b.offer) %></li>
             <li>From: <%= b.start_date %></li>
             <li>To: <%= b.end_date %></li>
             <li>Status : <%= b.status %></li>
@@ -32,11 +31,11 @@
       <% @bookinks_waiting_for_validation_sorted.each do |b| %>
         <% if b.status == "pending" %>
           <% if b.offer.photo.attached? %>
-            <li><%= cl_image_tag b.offer.photo.key, height: 200, width: 300 %></li>
+            <li><%= link_to (cl_image_tag b.offer.photo.key, height: 200, width: 300), offer_path(b.offer) %></li>
           <% else %>
-            <li><%= image_tag "#{b.offer.photo_url}" %></li>
+            <li><%= link_to (image_tag "#{b.offer.photo_url}"), offer_path(b.offer) %></li>
           <% end %>
-          <li><%= b.offer.title %></li>
+          <li><%= link_to b.offer.title, offer_path(b.offer) %></li>
           <li><%= b.offer.price %></li>
           <li>Dates demandés : du <%= b.start_date %> au <%= b.end_date %></li>
           <span><%= link_to "valider", booking_path(b), data: { turbo_method: :patch } %></span>
@@ -52,11 +51,11 @@
       <% @bookinks_waiting_for_validation_sorted.each do |b| %>
         <% if b.status == "validated" %>
           <% if b.offer.photo.attached? %>
-            <li><%= cl_image_tag b.offer.photo.key, height: 200, width: 300 %></li>
+            <li><%= link_to (cl_image_tag b.offer.photo.key, height: 200, width: 300), offer_path(b.offer) %></li>
           <% else %>
-            <li><%= image_tag "#{b.offer.photo_url}" %></li>
+            <li><%= link_to (image_tag "#{b.offer.photo_url})"), offer_path(b.offer) %></li>
           <% end %>
-          <li><%= b.offer.title %></li>
+          <li><%= link_to b.offer.title, offer_path(b.offer) %></li>
           <li><%= b.offer.price %></li>
           <li>Dates demandés : du <%= b.start_date %> au <%= b.end_date %></li>
         <% end %>
@@ -69,27 +68,27 @@
     <ul>
       <% @offers_current_user.each do |o| %>
           <% if o.photo.attached? %>
-              <li><%= cl_image_tag o.photo.key, height: 200, width: 300 %></li>
+              <li><%= link_to (cl_image_tag o.photo.key, height: 200, width: 300), offer_path(o) %></li>
             <% else %>
-              <li><%= image_tag "#{o.photo_url}" %></li>
+              <li><%= link_to (image_tag "#{o.photo_url}"), offer_path(o) %></li>
             <% end %>
-          <li><%= o.title %></li>
+          <li><%= link_to o.title, offer_path(o) %></li>
           <li><%= o.description %></li>
       <% end %>
     </ul>
   </div>
 
   <div class="my-bookings">
-    <h4>Old bookings</h4>
+    <h4>anciennes réservations</h4>
     <ul>
       <% @bookings_current_user.each do |b| %>
         <% if (b.start_date && b.end_date).present? %>
           <% if Date.today > b.end_date %>
-
-            <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" alt="starship" />
-            <li><%= b.offer.title %></li>
-            <li>From: <%= b.start_date %></li>
-            <li>To: <%= b.end_date %></li>
+            <li><%= link_to (image_tag "#{b.offer.photo_url}"), offer_path(b.offer) %></li>
+            <%# <img src="https://www.starwars-universe.com/images/encyclopedie/vaisseaux_vehicules/avatars_v6/ST70.png" alt="starship" /> %>
+            <li><%= link_to b.offer.title, offer_path(b.offer) %></li>
+            <li>depuis le: <%= b.start_date %></li>
+            <li>jusqu'au: <%= b.end_date %></li>
 
           <% end %>
         <% end %>
@@ -99,5 +98,3 @@
 
   <p><%= link_to "Back to starships", offers_path %></p>
 </div>
-
-<%# <% console %> %>
