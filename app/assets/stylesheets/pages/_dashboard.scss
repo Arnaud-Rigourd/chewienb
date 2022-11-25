@@ -117,46 +117,51 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 60%;
+    width: 40%;
     min-height: 120px;
   }
 
   .avis-text {
     flex-grow: 1;
     padding-left: 25px;
-    position: relative;
 
+
+    .user_name {
+      margin: 0px;
+      bottom: -5px;
+      left: 30px;
+    }
+
+    .user_content {
+      height: 50px;
+      display: flex;
+      flex-direction: column;
+      color: #c4c4c4;
+      font-size: 14px;
+      margin: 0;
+      width: 100%;
+      word-wrap:break-word;
+      max-height: 70px;
+      overflow: scroll;
+
+      .text-review {
+        padding-left: 25px;
+      }
+    }
+
+    .fa-quote-left {
+      bottom: 10px;
+      left: 10px;
+      padding-right: 20px;
+    }
   }
 
-  .user_name {
-    margin: 0px;
-    position: absolute;
-    bottom: -5px;
-    left: 30px;
-  }
 
-  .user_content {
-    margin: 0px;
-    position: absolute;
-    top: -10px;
-    left: 90px;
-    width: 80%;
-    word-wrap:break-word;
-    max-height: 70px;
-    overflow: scroll;
-  }
-
-  .fa-quote-left {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-  }
-
-  .fa-quote-right {
-    position: absolute;
-    top: 40px;
-    right: 10px;
-  }
+  // .fa-quote-right {
+  //   position: absolute;
+  //   top: 40px;
+  //   right: 10px;
+  // }
 
   .avis-supp {
     position: relative;
@@ -164,13 +169,12 @@
 
   .fa-trash {
     color: white;
-    opacity: 0.2;
+    opacity: 0.4;
     display: flex;
     transition: opacity 300ms;
-    position:absolute;
     bottom: 17px;
     right: 10px;
     &:hover {
-      opacity: 0.5;
+      opacity: 0.6;
   }
   }
