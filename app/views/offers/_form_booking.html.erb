@@ -13,7 +13,8 @@
                 input_html: { data: { controller: "flatpickr" , date_picker_target: 'endDate', action: 'input->date-picker#computePrice' }  } %>
         <%= f.submit %>
       <% end %>
-      <div data-date-picker-target="totalPrice"></div>
+      <div data-date_picker_target="totalDays"><div><p>days</p></div></div>
+      <div data-date-picker-target="totalPrice"><div><p>$ total</p></div></div>
     </div>
   </div>
 </div>
